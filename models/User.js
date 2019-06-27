@@ -15,6 +15,18 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    dogbreed: {
+        type: String, 
+        required: true
+    },
+    dogage: {
+        type: Number,
+        required: true
+    },
+    zipcode: {
+        type: Number,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now

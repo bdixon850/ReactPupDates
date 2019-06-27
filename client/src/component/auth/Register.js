@@ -10,6 +10,9 @@ class Register extends Component {
         super();
         this.state = {
             name: "",
+            breed: "",
+            age: "",
+            zipcode: "",
             email: "",
             password: "", 
             password2: "",
@@ -44,7 +47,10 @@ class Register extends Component {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            breed: this.state.breed,
+            age: this.state.age,
+            zipcode: this.state.zipcode
         };
         
         this.props.registerUser(newUser, this.props.history);
@@ -82,6 +88,48 @@ class Register extends Component {
                                 />
                                 <label htmlFor="name">Name</label>
                                 <span className="red-text">{errors.name}</span>
+                            </div>
+                            <div className="input-field col s12">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.breed}
+                                    error={errors.breed}
+                                    id="breed"
+                                    type="text"
+                                    className={classnames("", {
+                                        invalid: errors.breed
+                                    })}
+                                />
+                                <label htmlFor="breed">Dog Breed</label>
+                                <span className="red-text">{errors.breed}</span>
+                            </div>
+                            <div className="input-field col s12">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.age}
+                                    error={errors.age}
+                                    id="age"
+                                    type="number"
+                                    className={classnames("", {
+                                        invalid: errors.age
+                                    })}
+                                />
+                                <label htmlFor="age">Dog Age</label>
+                                <span className="red-text">{errors.age}</span>
+                            </div>
+                            <div className="input-field col s12">
+                                <input
+                                    onChange={this.onChange}
+                                    value={this.state.zipcode}
+                                    error={errors.zipcode}
+                                    id="zipcode"
+                                    type="number"
+                                    className={classnames("", {
+                                        invalid: errors.zipcode
+                                    })}
+                                />
+                                <label htmlFor="zipcode">Zipcode</label>
+                                <span className="red-text">{errors.zipcode}</span>
                             </div>
                             <div className="input-field col s12">
                                 <input
